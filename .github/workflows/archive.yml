@@ -16,7 +16,7 @@ jobs:
     - name: Fetch Latest Data
       run: |-        
         curl https://fonts.google.com/metadata/stats |  sed -e '1,1d' | jq -c . > stats.json
-        curl https://fonts.google.com/metadata/fonts |  sed -e '1,1d' | jq -c . > fonts.json
+        curl https://fonts.google.com/metadata/fonts | jq -c . > fonts.json
         curl https://fonts.google.com/metadata/icons |  sed -e '1,1d' | jq -c . > icons.json
 
     - name: Commit and push if it changed
